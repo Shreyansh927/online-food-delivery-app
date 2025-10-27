@@ -1,0 +1,153 @@
+.cart-main-container {
+  position: relative;
+}
+
+.cart-header {
+  display: flex;
+  justify-content: sp;
+  padding: 10px 20px;
+}
+
+.total-bill {
+  position: fixed;
+  bottom: 5%;
+  left: 90%;
+  transform: translate(-50%, -50%);
+  transition: all 0.3s;
+  font-family: poppins;
+  border: none;
+  padding: 20px;
+  padding-right: 24px;
+  color: white;
+  background-color: black;
+  border-radius: 50%;
+  cursor: pointer;
+  font-weight: bold;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 20px 10px rgb(97, 95, 95, 0.9);
+  transform: scale(1);
+  z-index: 100;
+  font-size: 16px;
+  width: 120px;
+  height: 120px;
+  animation: 1.5s ease-in-out 0s infinite alternate slideInFromBottom;
+}
+
+@keyframes slideInFromBottom {
+  from {
+    box-shadow: 0 20px 10px rgb(97, 95, 95, 0.9);
+    transform: scale(1);
+  }
+  to {
+    box-shadow: 0 0px 0px rgb(97, 95, 95, 0.9);
+    transform: scale(0.8);
+  }
+}
+
+.show-total-bill-container {
+  position: fixed;
+  color: rgb(26, 25, 25);
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  padding: 10px;
+  border-radius: 10px;
+  box-shadow: 0 10px 20px rgb(97, 95, 95, 0.9);
+  z-index: 100;
+  max-height: 1000px;
+  overflow: auto;
+  width: 500px;
+  text-align: center;
+  font-weight: bold;
+  font-family: poppins;
+  font-size: 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  transition: all 0.5s ease-in-out;
+}
+
+.hide-total-bill-container {
+  position: fixed;
+  color: rgb(26, 25, 25);
+  top: 50%;
+  left: 250%;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  padding: 10px;
+  border-radius: 10px;
+  box-shadow: 0 10px 20px rgb(97, 95, 95, 0.9);
+  z-index: 100;
+  max-height: 1000px;
+  overflow: auto;
+  width: 500px;
+  text-align: center;
+  font-weight: bold;
+  font-family: poppins;
+  font-size: 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  transition: all 0.5s ease-in-out;
+}
+
+.total-bill-details {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  justify-content: space-around;
+}
+.food-menu-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 50px;
+  list-style-type: none;
+  padding: 0px 20px;
+  margin: 20px 0px;
+  max-height: 400px;
+}
+
+.item-name {
+  text-align: left;
+}
+
+.final-total-amount {
+  display: flex;
+  justify-content: space-between;
+  font-size: 20px;
+  font-weight: bold;
+  padding: 0px 10px;
+}
+
+.payment-button-container{
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 10px 0;
+}
+
+.payment-button{
+  background-color: #0dbb07;
+  color: white;
+  border: none;
+  padding: 10px 30px;
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: bold;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  font-family: poppins;
+}
+
+@media screen and (max-width: 908px) {
+  .food-menu-container {
+    grid-template-columns: repeat(1, 1fr);
+  }
+
+  .food-name {
+    font-size: 10px;
+  }
+}

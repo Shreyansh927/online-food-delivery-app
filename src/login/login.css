@@ -1,0 +1,118 @@
+.register-container {
+  display: flex;
+  justify-content: space-around;
+  height: 100vh;
+  width: 100%;
+  align-items: center;
+  background-color: white;
+  color: black;
+  font-family: poppins;
+}
+
+.signup-image {
+  width: 100%;
+  height: 550px;
+}
+
+.form-container {
+  box-shadow: 2px 5px 5px rgb(65, 65, 65, 0.4);
+  border-radius: 10px;
+  padding: 20px 60px;
+}
+
+.input {
+  padding: 7px 10px;
+  border-radius: 5px;
+  border: 1px solid rgb(225, 225, 225);
+  font-size: 20px;
+  margin-bottom: 20px;
+  outline: none;
+  box-shadow: inset 2px 2px 2px rgb(206, 205, 205);
+  transition: all 0.5s;
+}
+.input::placeholder {
+  color: rgb(140, 139, 139);
+  font-family: poppins;
+  font-size: 18px;
+}
+.input:focus {
+  box-shadow: 0 0 0 black;
+}
+
+.register-button {
+  width: 100%;
+  padding: 12px 10px;
+  font-size: 19px;
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  margin-top: 20px;
+
+  background: linear-gradient(135deg, #ff512f, #dd2476, #ff512f, #ec3737);
+  background-size: 300% 300%;
+
+  transition: all 0.3s;
+  cursor: pointer;
+}
+
+.register-button:hover {
+  background-position: 100% 50%;
+  animation: gradientMove 6s ease infinite;
+}
+
+.heading {
+  background: linear-gradient(
+    90deg,
+    #101010,
+    #c25a0a,
+    #ed9653,
+    #ef7d27
+  ); /* Orangish gradient */
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-family: "Poppins", sans-serif;
+  font-weight: 700;
+  animation: animate alternate infinite 2s;
+  background-size: 100%;
+}
+
+@keyframes animate {
+  from {
+    background-size: 200%;
+    background-position: left;
+  }
+  to {
+    background-size: 200%;
+    background-position: right;
+  }
+}
+
+@media screen and (min-width: 480px) and (max-width: 720px) {
+  .register-container {
+    flex-direction: column;
+    margin-bottom: 40px;
+  }
+  .signup-image {
+    height: 300px;
+  }
+}
+
+@media screen and (min-width: 720px) and (max-width: 992px) {
+  .register-container {
+    flex-direction: row;
+  }
+  .signup-image {
+    height: 200px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .register-container {
+    flex-direction: column;
+  }
+  .signup-image {
+    height: 300px;
+  }
+}

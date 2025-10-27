@@ -1,0 +1,69 @@
+
+
+.bg-container {
+  background-color: rgb(255, 82, 0);
+  
+  background-size: cover;
+  height: 60vh;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: white;
+  position: relative;
+  font-family: poppins;
+}
+
+.home-image {
+  width: 200px;
+  height: 380px;
+  filter: drop-shadow(0 10px 5px black);
+  animation: a 1 alternate 5s;
+  transition: all 0.4s;
+
+  position: absolute;
+  left: 6.7%;
+  transform: translate(-50%, -50%);
+}
+
+.home-image2 {
+  width: 200px;
+  height: 380px;
+  filter: drop-shadow(0 10px 5px black);
+  animation: b 1 alternate 5s;
+  transition: all 0.4s;
+
+  position: absolute;
+  right: -6.6%;
+  transform: translate(-50%, -50%);
+}
+
+@keyframes a {
+  from {
+    left: -10%;
+  }
+  to {
+    left: 7.2%;
+  }
+}
+
+@keyframes b {
+  from {
+    right: -30%;
+  }
+  to {
+    right: -6.9%;
+  }
+}
+
+.content-part{
+display: flex;
+justify-content: center;
+align-items: center;
+
+}
+
+.tagline{
+    font-size: 30px;
+    text-align: center;
+}
+

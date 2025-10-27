@@ -1,0 +1,15 @@
+.home-container{
+    height: 100vh;
+    
+}
+
+.min-bg{
+    background-color: rgb(255, 82, 0);
+    color: white;
+    background-size: cover;
+    background-attachment: fixed;
+    height: 80vh;
+}
+.home-navbar{
+    
+}
