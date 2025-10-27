@@ -159,6 +159,7 @@ const Cart = () => {
         <button className="total-bill" onClick={toggleTotalBill}>
           Total Bill
         </button>
+        <p>all</p>
       </div>
     </>
   );
