@@ -1,13 +1,74 @@
-# React + Vite
+🍔 FOODY WEBSITE – Online Food Ordering System
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Order food online from anywhere and at any time.
+A modern Swiggy-style web application built with a full-stack approach, real-time data fetching, and seamless UI experience.
 
-Currently, two official plugins are available:
+🚀 Project Overview
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+This is a fully functional food ordering web application that allows users to browse restaurants, explore food menus, view detailed dish information, and place orders in real time. The UI is designed to deliver a smooth customer experience similar to popular platforms like Swiggy and Zomato.
 
-## Expanding the ESLint configuration
+The project follows best coding practices including component-based architecture, state management, and reusable UI patterns.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
-# online-food-app
+🛠️ Tech Stack Used
+🎯 Frontend
+
+React.js – Component-based UI development
+
+React Router – Client-side routing for multiple pages
+
+Context API / Redux (if used) – State management for cart and user data
+
+Fetch API / Axios – Real-time data fetching
+
+Tailwind / CSS / Bootstrap – Clean responsive UI
+
+Toast notifications / SweetAlert – Smooth feedback alerts
+
+🔥 Real-Time Restaurant & Food Data
+
+Swiggy Real-Time API Integration
+
+Fetching restaurant listings based on user location
+
+Menu details and food item descriptions
+
+Search filters and sorting options
+
+Live dynamic updates on page load
+
+✔️ Handles asynchronous API calls
+✔️ Implements error handling for failed API responses
+
+🔐 Backend & Database
+
+Firebase (Firestore + Authentication)
+
+User Authentication (Sign Up / Login / Google Auth)
+
+User Cart Storage
+
+Order History Data
+
+Persistent session via Firebase Auth
+
+Real-time database updates
+
+Why Firebase?
+
+Zero server management
+
+Real-time database sync
+
+Secure and scalable user authentication
+
+🧾 Key Features
+
+✔️ Browse restaurants from real-time API
+✔️ View food items & menu dynamically
+✔️ Add / remove items from cart
+✔️ Secure user authentication using Firebase
+✔️ Live total price calculation for cart
+✔️ Order persistence in database
+✔️ Search bar for restaurant & dish filtering
+✔️ Responsive UI for all devices
+✔️ Toast notifications for add/remove cart items
