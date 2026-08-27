@@ -66,7 +66,15 @@ const PlaceRestaurants = () => {
 
   const getAllRestaurantsList = async () => {
     try {
-      const restaurantsApi = `https://corsproxy.io/https://www.swiggy.com/dapi/restaurants/list/v5?lat=${currentLat}&lng=${currentLon}&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING`;
+      const swiggyUrl =
+        `https://www.swiggy.com/dapi/restaurants/list/v5` +
+        `?lat=${currentLat}` +
+        `&lng=${currentLon}` +
+        `&is-seo-homepage-enabled=true` +
+        `&page_type=DESKTOP_WEB_LISTING`;
+
+      const restaurantsApi = `https://corsproxy.io/?url=${encodeURIComponent(swiggyUrl)}`;
+
       const response = await axios.get(restaurantsApi);
 
       const formattedRestaurants =
@@ -82,10 +90,10 @@ const PlaceRestaurants = () => {
             price: each.info.costForTwo || "",
             intPrice:
               parseInt(
-                each.info.costForTwo?.split("₹")[1]?.split(" ")[0] || 0
+                each.info.costForTwo?.split("₹")[1]?.split(" ")[0] || 0,
               ) / 2,
             locality: each.info.locality || "",
-          })
+          }),
         ) || [];
 
       const formattedDishesList =
@@ -97,7 +105,7 @@ const PlaceRestaurants = () => {
             collectionId: eachDish.action.link
               ?.split("collection_id=")[1]
               ?.split("&")[0],
-          })
+          }),
         );
 
       const formattedBestFoodPlaces =
@@ -168,23 +176,22 @@ const PlaceRestaurants = () => {
     toast.info(`${e.target.innerText} Under Construction...`);
   };
 
-const applyFilters = ({
-  topRating: topRatingParam = topRating,
-  pureVegMode: pureVegParam = pureVegMode,
-  fastestDeliveryModeOn: fastestParam = fastestDeliveryModeOn,
-  lowToHigh: lowToHighParam = lowToHigh,
-}) => {
-  let filtered = [...restaurantListCopy];
-  if (pureVegParam) filtered = filtered.filter((r) => r.veg);
-  if (topRatingParam) filtered = filtered.filter((r) => r.rating >= 4);
-  if (fastestParam)
-    filtered = filtered.sort((a, b) => a.deliveryTime - b.deliveryTime);
-  if (lowToHighParam === "low to high")
-    filtered = filtered.sort((a, b) => a.intPrice - b.intPrice);
-  else filtered = filtered.sort((a, b) => b.intPrice - a.intPrice);
-  setRestaurantList(filtered);
-};
-
+  const applyFilters = ({
+    topRating: topRatingParam = topRating,
+    pureVegMode: pureVegParam = pureVegMode,
+    fastestDeliveryModeOn: fastestParam = fastestDeliveryModeOn,
+    lowToHigh: lowToHighParam = lowToHigh,
+  }) => {
+    let filtered = [...restaurantListCopy];
+    if (pureVegParam) filtered = filtered.filter((r) => r.veg);
+    if (topRatingParam) filtered = filtered.filter((r) => r.rating >= 4);
+    if (fastestParam)
+      filtered = filtered.sort((a, b) => a.deliveryTime - b.deliveryTime);
+    if (lowToHighParam === "low to high")
+      filtered = filtered.sort((a, b) => a.intPrice - b.intPrice);
+    else filtered = filtered.sort((a, b) => b.intPrice - a.intPrice);
+    setRestaurantList(filtered);
+  };
 
   // Filters
   const ratingFilter = () => {
