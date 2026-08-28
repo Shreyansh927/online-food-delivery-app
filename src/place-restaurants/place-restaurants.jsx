@@ -73,7 +73,7 @@ const PlaceRestaurants = () => {
         `&is-seo-homepage-enabled=true` +
         `&page_type=DESKTOP_WEB_LISTING`;
 
-      const restaurantsApi = `https://corsproxy.io/?key=${import.meta.env.CORS_PROXY_API_KEY}&url=${encodeURIComponent(swiggyUrl)}`;
+      const restaurantsApi = `https://corsproxy.io/?key=${import.meta.env.VITE_CORS_PROXY_API_KEY}&url=${encodeURIComponent(swiggyUrl)}`;
 
       const response = await axios.get(restaurantsApi);
 
