@@ -3,6 +3,7 @@ import { auth, db } from "../firebase";
 import { useNavigate } from "react-router-dom";
 import { doc, getDoc } from "firebase/firestore";
 import "./small-header.css";
+import { toast } from "react-toastify";
 
 const Header = () => {
   const [userDetails, setUserDetails] = useState(null);

@@ -4,7 +4,7 @@ import "./dish.css";
 import Header from "../header/header";
 import { FaStar, FaHeart } from "react-icons/fa";
 import { MdTimer, MdOutlineRestaurant, MdFastfood } from "react-icons/md";
-import { toast } from "react-toastify";
+// import { toast } from "react-toastify";
 
 import { useParams, useNavigate } from "react-router-dom";
 

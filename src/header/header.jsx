@@ -76,11 +76,11 @@ const Header = () => {
     setClassn(true);
   };
 
-  const getLocationOnKeyDown = (e) => {
-    if (e.key === "Enter") {
-      navigateLocation2();
-    }
-  };
+  // const getLocationOnKeyDown = (e) => {
+  //   if (e.key === "Enter") {
+  //     navigateLocation2();
+  //   }
+  // };
 
   const navigateLocation2 = async () => {
     const weatherApi = `https://api.openweathermap.org/geo/1.0/direct?q=${city}&limit=1&appid=d8ff55d5ebb2aaf1901fb2153e39c50e`;

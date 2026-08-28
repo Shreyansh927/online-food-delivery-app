@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useContext } from "react";
+import React, { useState, useEffect } from "react";
 import { auth, db } from "../firebase";
 import { doc, onSnapshot, setDoc, updateDoc } from "firebase/firestore";
 import { useNavigate } from "react-router-dom";
@@ -8,7 +8,7 @@ import ContextFile from "../../context/context";
 
 const FavouriteSection = () => {
   const [favourites, setFavourites] = useState([]);
-  const { favouriteList } = useContext(ContextFile);
+  // const { favouriteList } = useContext(ContextFile);
   const user = auth.currentUser;
   const navigate = useNavigate();
 

@@ -29,11 +29,11 @@ const Cart = () => {
     setAllItemsPrice(updatedAllItems);
   };
 
-  const emptyList = () => {
-    const empty = [];
-    setCartList(empty);
-    localStorage.setItem("cart-list", JSON.stringify(empty));
-  };
+  // const emptyList = () => {
+  //   const empty = [];
+  //   setCartList(empty);
+  //   localStorage.setItem("cart-list", JSON.stringify(empty));
+  // };
 
   const toggleTotalBill = () => {
     setShowTotalBill(!showTotalBill);
