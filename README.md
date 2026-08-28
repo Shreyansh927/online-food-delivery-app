@@ -1,3 +1,4 @@
+<img width="1920" height="1080" alt="Screenshot 2026-08-28 142156" src="https://github.com/user-attachments/assets/31ec598d-5d1b-450e-8ae0-771b9fa2d7b6" />
 🍔 FOODY --- Online Food Ordering System
 
 A full-stack, Swiggy-inspired food ordering web application built with
@@ -52,7 +53,17 @@ persistence, and reusable UI components.
 Screen shots 
 
 
-<img width="1920" height="1080" alt="Screenshot 2026-08-28 142920" src="https://github.com/user-attachments/assets/ceb14397-b360-4741-91ee-2b347a1a4447" />
+<img width="700" height="500" alt="Screenshot 2026-08-28 142920" src="https://github.com/user-attachments/assets/ceb14397-b360-4741-91ee-2b347a1a4447" />
+<img width="700" height="500" alt="Screenshot 2026-08-28 142216" src="https://github.com/user-attachments/assets/366044f3-ae54-4bd2-9145-fc4608e817c6" />
+<img width="700" height="500" alt="Screenshot 2026-08-28 142228" src="https://github.com/user-attachments/assets/c9ca11e2-8275-4de1-8aea-fb6325270b21" />
+<img width="700" height="500" alt="Screenshot 2026-08-28 142306" src="https://github.com/user-attachments/assets/1c79734a-d592-413a-8ac9-8f0de26de4d2" />
+<img width="700" height="500" alt="Screenshot 2026-08-28 142642" src="https://github.com/user-attachments/assets/c6e2e206-68d9-4660-819f-e5cc8e131a85" />
+<img width="700" height="500" alt="Screenshot 2026-08-28 142920" src="https://github.com/user-attachments/assets/e6f3fcb1-0931-4370-984b-35c8e984044d" />
+
+
+
+
+
 
 
 ✨ Core Features
