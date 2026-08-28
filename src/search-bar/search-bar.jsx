@@ -166,7 +166,7 @@ const getRestrauInfo = async () => {
       `&trackingId=621aa4df-5300-1ee3-af28-649afd6ac1ce` +
       `&includeIMItem=true`;
 
-    const api = `https://corsproxy.io/?key=${import.meta.env.VITE_CORSPROXY_KEY}&url=${encodeURIComponent(swiggyUrl)}`;
+    const api = `https://corsproxy.io/?key=${import.meta.env.VITE_CORS_PROXY_API_KEY}&url=${encodeURIComponent(swiggyUrl)}`;
 
     const response = await axios.get(api);
 
