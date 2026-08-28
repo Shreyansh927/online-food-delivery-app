@@ -11,6 +11,7 @@ handling.
 
 
 
+
 📌 Project Overview
 
 FOODY is an online food ordering platform designed around a modern
@@ -47,6 +48,12 @@ The project was built as a hands-on learning project during the
 beginning of 3rd year, with a strong focus on practical React
 development, API integration, asynchronous programming, authentication,
 persistence, and reusable UI components.
+
+Screen shots 
+
+
+<img width="1920" height="1080" alt="Screenshot 2026-08-28 142920" src="https://github.com/user-attachments/assets/ceb14397-b360-4741-91ee-2b347a1a4447" />
+
 
 ✨ Core Features
 
