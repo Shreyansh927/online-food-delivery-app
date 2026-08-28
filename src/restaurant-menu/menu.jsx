@@ -141,7 +141,7 @@ const RestaurantMenu = () => {
 
   return (
     <>
-      <hr style={{ margin: "0px" }} />
+      
       <div className="restrau-info-deals-container">
         <div className="restrau-info-container">
           <div className="heading-container">
