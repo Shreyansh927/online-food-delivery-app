@@ -125,7 +125,17 @@ const SearchBar = () => {
   //  API call for selected search
   const searchSelectedItem = async (query) => {
     try {
-      const api = `https://corsproxy.io/https://www.swiggy.com/dapi/restaurants/search/suggest?lat=${currentLat}&lng=${currentLon}&str=${query}&trackingId=621aa4df-5300-1ee3-af28-649afd6ac1ce&includeIMItem=true`;
+      const swiggyUrl =
+        `https://www.swiggy.com/dapi/restaurants/search/suggest` +
+        `?lat=${currentLat}` +
+        `&lng=${currentLon}` +
+        `&str=${encodeURIComponent(query)}` +
+        `&trackingId=621aa4df-5300-1ee3-af28-649afd6ac1ce` +
+        `&includeIMItem=true`;
+
+      const api = `https://corsproxy.io/?key=${import.meta.env.VITE_CORS_PROXY_API_KEY}&url=${encodeURIComponent(swiggyUrl)}`;
+
+      const response = await axios.get(api);
       const response = await axios.get(api);
 
       const suggestions = response?.data?.data?.suggestions || [];
@@ -148,7 +158,15 @@ const SearchBar = () => {
   //  API call for live search
 const getRestrauInfo = async () => {
   try {
-    const api = `https://corsproxy.io/https://www.swiggy.com/dapi/restaurants/search/suggest?lat=${currentLat}&lng=${currentLon}&str=${restaurantValue}&trackingId=621aa4df-5300-1ee3-af28-649afd6ac1ce&includeIMItem=true`;
+    const swiggyUrl =
+      `https://www.swiggy.com/dapi/restaurants/search/suggest` +
+      `?lat=${currentLat}` +
+      `&lng=${currentLon}` +
+      `&str=${encodeURIComponent(restaurantValue)}` +
+      `&trackingId=621aa4df-5300-1ee3-af28-649afd6ac1ce` +
+      `&includeIMItem=true`;
+
+    const api = `https://corsproxy.io/?key=${import.meta.env.VITE_CORSPROXY_KEY}&url=${encodeURIComponent(swiggyUrl)}`;
 
     const response = await axios.get(api);
 

@@ -19,7 +19,21 @@ const Dish = () => {
   }, [collectionId]);
 
   const getAllDishRestaurant = async () => {
-    const api = `https://corsproxy.io/https://www.swiggy.com/dapi/restaurants/list/v5?lat=26.4148245&lng=80.23213129999999&collection=${collectionId}&tags=layout_CCS_Idli&sortBy=&filters=&type=rcv2&offset=0&carousel=true&third_party_vendor=1`;
+
+    const swiggyUrl =
+      `https://www.swiggy.com/dapi/restaurants/list/v5` +
+      `?lat=26.4148245` +
+      `&lng=80.23213129999999` +
+      `&collection=${collectionId}` +
+      `&tags=layout_CCS_Idli` +
+      `&sortBy=` +
+      `&filters=` +
+      `&type=rcv2` +
+      `&offset=0` +
+      `&carousel=true` +
+      `&third_party_vendor=1`;
+
+    const api = `https://corsproxy.io/?key=${import.meta.env.VITE_CORS_PROXY_API_KEY}&url=${encodeURIComponent(swiggyUrl)}`;
 
     try {
       const response = await axios.get(api);

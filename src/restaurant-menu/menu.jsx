@@ -25,7 +25,16 @@ const RestaurantMenu = () => {
   }, [restaurantId]);
 
   const getRestaurantMenu = async () => {
-    const api = `https://corsproxy.io/https://www.swiggy.com/mapi/menu/pl?page-type=REGULAR_MENU&complete-menu=true&lat=20.9792905&lng=75.636406&restaurantId=${restaurantId}&submitAction=ENTER`;
+    const swiggyUrl =
+      `https://www.swiggy.com/mapi/menu/pl` +
+      `?page-type=REGULAR_MENU` +
+      `&complete-menu=true` +
+      `&lat=20.9792905` +
+      `&lng=75.636406` +
+      `&restaurantId=${restaurantId}` +
+      `&submitAction=ENTER`;
+
+    const api = `https://corsproxy.io/?key=${import.meta.env.VITE_CORS_PROXY_API_KEY}&url=${encodeURIComponent(swiggyUrl)}`;
 
     try {
       const response = await axios.get(api);
@@ -33,7 +42,7 @@ const RestaurantMenu = () => {
 
       // Find the REGULAR menu group
       const regularMenuGroup = cards.find(
-        (c) => c.groupedCard?.cardGroupMap?.REGULAR
+        (c) => c.groupedCard?.cardGroupMap?.REGULAR,
       )?.groupedCard?.cardGroupMap?.REGULAR?.cards;
 
       const itemsCards =
@@ -51,7 +60,7 @@ const RestaurantMenu = () => {
           imageId: info?.imageId || "",
           price: info?.price || info?.defaultPrice || 0,
           exactPrice: ((info?.price || info?.defaultPrice || 0) / 100).toFixed(
-            2
+            2,
           ),
           veg:
             info?.veg !== undefined
@@ -94,7 +103,7 @@ const RestaurantMenu = () => {
       setRestrauMenu(fullMenu); // show full menu if no search
     } else {
       const filtered = fullMenu.filter((each) =>
-        each.name.toLowerCase().includes(dishName.toLowerCase())
+        each.name.toLowerCase().includes(dishName.toLowerCase()),
       );
       setRestrauMenu(filtered);
     }
@@ -113,7 +122,7 @@ const RestaurantMenu = () => {
 
   const increaseQuantity = (each) => {
     const updatedCart = cartList.map((item) =>
-      item.id === each.id ? { ...item, q: item.q + 1 } : item
+      item.id === each.id ? { ...item, q: item.q + 1 } : item,
     );
     setCartList(updatedCart);
     localStorage.setItem("cart-list", JSON.stringify(updatedCart));
@@ -121,7 +130,7 @@ const RestaurantMenu = () => {
 
   const decreaseQuantity = (each) => {
     let updatedCart = cartList.map((item) =>
-      item.id === each.id ? { ...item, q: item.q - 1 } : item
+      item.id === each.id ? { ...item, q: item.q - 1 } : item,
     );
 
     updatedCart = updatedCart.filter((item) => item.q > 0);
@@ -237,7 +246,8 @@ const RestaurantMenu = () => {
           }
           onClick={() => navigate("/cart")}
         >
-          <FaCartPlus className="cart-icon" /> <span className="cart-length">{cartList.length}</span>
+          <FaCartPlus className="cart-icon" />{" "}
+          <span className="cart-length">{cartList.length}</span>
         </div>
       </ul>
     </>
