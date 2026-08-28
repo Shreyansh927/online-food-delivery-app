@@ -172,14 +172,30 @@ const getRestrauInfo = async () => {
 
     const suggestions = response?.data?.data?.suggestions || [];
 
-    const formattedSuggestion = suggestions.map((s) => ({
-      suggestion: s.text,
-      thumbNailId: s.cloudinaryId,
-      restaurantId: s.restaurantId,
-      type: s.type,
-      tag: s.tagToDisplay,
-      deepLink: s.cta?.link || "", // can be useful
-    }));
+    const formattedSuggestion = suggestions.map((s) => {
+      let restaurantId = s.restaurantId;
+
+      // Swiggy sometimes returns restaurantId as 0
+      // and puts the actual ID inside metadata
+      if ((!restaurantId || restaurantId === 0) && s.metadata) {
+        try {
+          const metadata = JSON.parse(s.metadata);
+
+          restaurantId = metadata?.data?.primaryRestaurantId;
+        } catch (error) {
+          console.error("Failed to parse metadata:", error);
+        }
+      }
+
+      return {
+        suggestion: s.text || "",
+        thumbNailId: s.cloudinaryId || "",
+        restaurantId: restaurantId || null,
+        type: s.type || "",
+        tag: s.tagToDisplay || "",
+        deepLink: s.cta?.link || "",
+      };
+    });
 
     setRestrauContainer(formattedSuggestion);
   } catch (error) {

@@ -1,0 +1,6 @@
+services:
+  frontend:
+    build: .
+    container_name: firebase-auth-app
+    ports:
+      - "3000:80"

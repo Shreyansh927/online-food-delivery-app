@@ -76,6 +76,7 @@ const PlaceRestaurants = () => {
       const restaurantsApi = `https://corsproxy.io/?key=${import.meta.env.VITE_CORS_PROXY_API_KEY}&url=${encodeURIComponent(swiggyUrl)}`;
 
       const response = await axios.get(restaurantsApi);
+      
 
       const formattedRestaurants =
         response.data?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants?.map(
