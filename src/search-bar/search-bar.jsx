@@ -136,7 +136,7 @@ const SearchBar = () => {
       const api = `https://corsproxy.io/?key=${import.meta.env.VITE_CORS_PROXY_API_KEY}&url=${encodeURIComponent(swiggyUrl)}`;
 
       const response = await axios.get(api);
-      const response = await axios.get(api);
+      
 
       const suggestions = response?.data?.data?.suggestions || [];
       const formattedSuggestion = suggestions.map((s) => ({
